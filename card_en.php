@@ -79,20 +79,20 @@ if (strlen($_SESSION['uid']) == "") {
                                         <div class="col-md-4 mb-4">
                                             <div class="form-group">
                                                 <label for="company">Enter Address 1</label>
-                                                <input type="text" class="form-control" placeholder="ঠিকানা ১" id="address1" name="address1" value="zone- 4, Dhaka North City Corporation" />
+                                                <input type="text" class="form-control" placeholder="" id="address1" name="address1" value="zone- 4, Dhaka North City Corporation" />
                                             </div>
                                         </div>
 
                                         <div class="col-md-4 mb-4">
                                             <div class="form-group">
                                                 <label for="company">Enter Address 2</label>
-                                                <input type="text" class="form-control" placeholder="ঠিকানা ২ (City Corporation)" id="address2" name="address2" value="City Corporation: Dhaka North City Corporation" />
+                                                <input type="text" class="form-control" placeholder="" id="address2" name="address2" value="City Corporation: Dhaka North City Corporation" />
                                             </div>
                                         </div>
                                         <div class="col-md-4 mb-4">
                                             <div class="form-group">
                                                 <label for="company">Enter Address 3</label>
-                                                <input type="text" class="form-control" placeholder="ঠিকানা ৩ (District)" id="address3" name="address3" value="District: Dhaka, Bangladesh" />
+                                                <input type="text" class="form-control" placeholder="" id="address3" name="address3" value="District: Dhaka, Bangladesh" />
                                             </div>
                                         </div>
                                     </div>
@@ -108,7 +108,7 @@ if (strlen($_SESSION['uid']) == "") {
                                         <div class="col-md-6 mb-4">
                                             <div class="form-group">
                                                 <label for="url">Date Of Issue</label>
-                                                <input type="date" class="form-control datepicker hasDatepicker" name="doi" id="doi" placeholder="Enter Date Of Issue" value="<?php echo date("Y-d-m")?>" />
+                                                <input type="text" class="form-control datepicker hasDatepicker" name="doi" id="doi" placeholder="Enter Date Of Issue" value="<?php echo date("d/m/Y")?>" />
                                             </div>
                                         </div>
                                     </div>
@@ -116,7 +116,7 @@ if (strlen($_SESSION['uid']) == "") {
                                         <div class="col-md-6 mb-4">
                                             <div class="form-group">
                                                 <label for="email">Date Of Registration</label>
-                                                <input type="date" class="form-control datepicker hasDatepicker" id="dor" name="dor" placeholder="Enter Date Of Registration" value="<?php echo date("Y-d-m")?>" />
+                                                <input type="text" class="form-control datepicker hasDatepicker" id="dor" name="dor" placeholder="Enter Date Of Registration" value="<?php echo date("d/m/Y")?>" />
                                             </div>
                                         </div>
 
@@ -131,7 +131,7 @@ if (strlen($_SESSION['uid']) == "") {
                                         <div class="col-md-6 mb-4">
                                             <div class="form-group">
                                                 <label for="url">Date Of Birth</label>
-                                                <input type="date" class="form-control datepicker hasDatepicker" id="dob" name="dob" placeholder="Enter Date Of Birth" value="2000-01-01" />
+                                                <input type="text" class="form-control datepicker hasDatepicker" id="dob" name="dob" placeholder="Enter Date Of Birth" value="01/01/2000" />
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-4">

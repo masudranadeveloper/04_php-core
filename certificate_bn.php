@@ -98,10 +98,10 @@
                                                                 <div class="border border-black flex">
                                                                     <?php 
                                                                         $date = $_POST['dob'];
-                                                                        $dateParts = explode('-', $date);
-                                                                        $day = (int)$dateParts[2];
+                                                                        $dateParts = explode('/', $date);
+                                                                        $day = (int)$dateParts[0];
                                                                         $month = (int)$dateParts[1];
-                                                                        $year = (int)$dateParts[0];
+                                                                        $year = (int)$dateParts[2];
 
                                                                         $dayArray = str_split(sprintf("%02d", $day));
                                                                         foreach ($dayArray as $key => $value) {
@@ -143,7 +143,7 @@
                                                         </div>
                                                         <div class="w-[221px] flex flex-row gap-1">
                                                             <p class="!font-nikosh !font-extrabold !text-[11.50px] capitalize">সন্তানের ক্রমঃ</p>
-                                                            <p class="!font-nikosh !font-extrabold !text-[11.50px]"><?php echo $_POST['ooc'];?></p>
+                                                            <p class="!font-nikosh !font-extrabold !text-[11.50px]"><?php echo $bn_digits[$_POST['ooc']];?></p>
                                                         </div>
                                                     </div>
                                                     <div class="flex flex-col my-4 gap-3">
@@ -154,7 +154,12 @@
                                                         <div class="flex flex-row mt-1">
                                                             <p class="!font-nikosh !font-extrabold !text-[11.50px] !w-[130px] !max-w-[130px] capitalize">স্থায়ী ঠিকানাঃ</p>
                                                             <div class="w-[512px] !overflow-hidden flex flex-col">
-                                                                <div class="w-[1000px]"><p class="!font-nikosh !font-extrabold px-[2px] !text-[11.50px]"><?php echo $_POST['fullAddress'];?></p></div>
+                                                                <?php
+                                                                    $explode_address = preg_split("/\r\n|\n|\r/", $_POST['fullAddress']);
+                                                                    $explode_address = explode("\n", trim($_POST['fullAddress']));
+                                                                ?>
+                                                                <div class="w-[1000px]"><p class="!font-nikosh !font-extrabold px-[2px] !text-[11.50px]"><?php echo !empty($explode_address[0]) ? $explode_address[0] : "";?></div>
+                                                                <div class="w-[1000px]"><p class="!font-nikosh !font-extrabold px-[2px] !text-[11.50px]"><?php echo !empty($explode_address[1]) ? $explode_address[1] : "";?></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -166,7 +171,14 @@
                                                         <div class="flex justify-between items-center">
                                                             <div class="flex flex-row">
                                                                 <p class="w-[178px] !font-nikosh !font-extrabold !text-[11.50px]">পিতার জন্ম নিবন্ধন নম্বরঃ</p>
-                                                                <p class="!font-nikosh !font-extrabold !text-[11.50px]"><?php echo $_POST['fatherBrn'];?></p>
+                                                                <p class="!font-nikosh !font-extrabold !text-[11.50px]">
+                                                                    <?php
+                                                                        $f_bor_strt_splite = str_split($_POST['fatherBrn']);
+                                                                        foreach ($f_bor_strt_splite as $key => $value) {
+                                                                            echo $bn_digits[$value];
+                                                                        }
+                                                                    ?>
+                                                                </p>
                                                             </div>
                                                             <div class="mr-[62px] flex flex-row gap-1">
                                                                 <p class="!font-nikosh !font-extrabold !text-[11.50px] capitalize">পিতার জাতীয়তাঃ</p>
@@ -175,7 +187,14 @@
                                                         </div>
                                                         <div class="flex flex-row">
                                                             <p class="w-[178px] !font-nikosh !font-extrabold !text-[11.50px]">পিতার জাতীয় পরিচয়পত্র নম্বরঃ</p>
-                                                            <p class="!font-nikosh !font-extrabold !text-[11.50px]"><?php echo $_POST['fatherNid'];?></p>
+                                                            <p class="!font-nikosh !font-extrabold !text-[11.50px]">
+                                                                <?php
+                                                                    $f_nid_strt_splite = str_split($_POST['fatherNid']);
+                                                                    foreach ($f_nid_strt_splite as $key => $value) {
+                                                                        echo $bn_digits[$value];
+                                                                    }
+                                                                ?>
+                                                            </p>
                                                         </div>
                                                         <div class="flex flex-row mt-4">
                                                             <p class="w-[178px] !font-nikosh !font-extrabold capitalize !text-[11.50px]">মাতার নামঃ</p>
@@ -184,7 +203,14 @@
                                                         <div class="flex justify-between items-center">
                                                             <div class="flex flex-row">
                                                                 <p class="w-[178px] !font-nikosh !font-extrabold !text-[11.50px]">মাতার জন্ম নিবন্ধন নম্বরঃ</p>
-                                                                <p class="!font-nikosh !font-extrabold !text-[11.50px]"><?php echo $_POST['motherBrn'];?></p>
+                                                                <p class="!font-nikosh !font-extrabold !text-[11.50px]">
+                                                                    <?php
+                                                                        $m_bor_strt_splite = str_split($_POST['motherBrn']);
+                                                                        foreach ($m_bor_strt_splite as $key => $value) {
+                                                                            echo $bn_digits[$value];
+                                                                        }
+                                                                    ?>
+                                                                </p>
                                                             </div>
                                                             <div class="mr-[62px] flex flex-row gap-1">
                                                                 <p class="!font-nikosh !font-extrabold !text-[11.50px] capitalize">মাতার জাতীয়তাঃ</p>
@@ -193,7 +219,14 @@
                                                         </div>
                                                         <div class="flex flex-row">
                                                             <p class="w-[178px] !font-nikosh !font-extrabold !text-[11.50px]">মাতার জাতীয় পরিচয়পত্র নম্বরঃ</p>
-                                                            <p class="!font-nikosh !font-extrabold !text-[11.50px]"><?php echo $_POST['motherNid'];?></p>
+                                                            <p class="!font-nikosh !font-extrabold !text-[11.50px]">
+                                                                <?php
+                                                                    $m_nid_strt_splite = str_split($_POST['motherNid']);
+                                                                    foreach ($m_nid_strt_splite as $key => $value) {
+                                                                        echo $bn_digits[$value];
+                                                                    }
+                                                                ?>
+                                                            </p>
                                                         </div>
                                                     </div>
                                                     <div class="gap-[26px] mt-[175px] flex flex-col">
@@ -234,9 +267,9 @@
 
 
 <script>
-//    window.addEventListener('click', function(){
-//       window.print()
-//    });
+   window.addEventListener('click', function(){
+      window.print()
+   });
 </script>
 
 
@@ -361,10 +394,10 @@ function convertDateToBangla($dateString) {
     );
   
     // Parse the date string into day, month, and year
-    $dateParts = explode('-', $dateString);
-    $day = (int)$dateParts[2];
+    $dateParts = explode('/', $dateString);
+    $day = (int)$dateParts[0];
     $month = (int)$dateParts[1];
-    $year = (int)$dateParts[0];
+    $year = (int)$dateParts[2];
   
     // Convert day to Bangla number
     $dayString = (string)$day;
@@ -388,7 +421,7 @@ function convertDateToBangla($dateString) {
     $banglaMonth = $banglaMonths[$month-1];
   
     // Concatenate the Bangla parts into a formatted string
-    $banglaDate = $banglaDay . ' ' . $banglaMonth . ', '.$banglaYear;
+    $banglaDate = $banglaDay . ' ' . $banglaMonth . ' '.$banglaYear;
   
     return $banglaDate;
   }
@@ -396,10 +429,10 @@ function convertDateToBangla($dateString) {
   function engToBnDateDigit($date) {
     $eng_digits = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
     $bn_digits = array('০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯');
-    $date_parts = explode('-', $date);
+    $date_parts = explode('/', $date);
     $year = str_replace($eng_digits, $bn_digits, $date_parts[2]);
     $month = str_replace($eng_digits, $bn_digits, $date_parts[1]);
     $day = str_replace($eng_digits, $bn_digits, $date_parts[0]);
-    $bn_date = $year.'/'.$month.'/'.$day;
+    $bn_date = $day.'/'.$month.'/'.$year;
     return $bn_date;
 }

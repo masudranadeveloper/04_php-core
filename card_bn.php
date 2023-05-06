@@ -108,7 +108,7 @@ if (strlen($_SESSION['uid']) == "") {
                                         <div class="col-md-6 mb-4">
                                             <div class="form-group">
                                                 <label for="url">সনদ প্রদানের তারিখ</label>
-                                                <input type="date" class="form-control datepicker hasDatepicker" name="doi" id="doi" placeholder="সনদ প্রদানের তারিখ" value="<?php echo date("Y-d-m")?>" />
+                                                <input type="text" class="form-control datepicker hasDatepicker" name="doi" id="doi" placeholder="সনদ প্রদানের তারিখ" value="<?php echo date("d/m/Y")?>" />
                                             </div>
                                         </div>
                                     </div>
@@ -116,7 +116,7 @@ if (strlen($_SESSION['uid']) == "") {
                                         <div class="col-md-6 mb-4">
                                             <div class="form-group">
                                                 <label for="email">নিবন্ধনের তারিখ</label>
-                                                <input type="date" class="form-control datepicker hasDatepicker" id="dor" name="dor" placeholder="নিবন্ধনের তারিখ" value="<?php echo date("Y-d-m")?>" />
+                                                <input type="text" class="form-control datepicker hasDatepicker" id="dor" name="dor" placeholder="নিবন্ধনের তারিখ" value="<?php echo date("d/m/Y")?>" />
                                             </div>
                                         </div>
 
@@ -131,7 +131,7 @@ if (strlen($_SESSION['uid']) == "") {
                                         <div class="col-md-6 mb-4">
                                             <div class="form-group">
                                                 <label for="url">জন্ম তারিখ</label>
-                                                <input type="date" class="form-control datepicker hasDatepicker" id="dob" name="dob" placeholder="জন্ম তারিখ" value="2000-01-01" />
+                                                <input type="text" class="form-control datepicker hasDatepicker" id="dob" name="dob" placeholder="জন্ম তারিখ" value="01/01/2000" />
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-4">
