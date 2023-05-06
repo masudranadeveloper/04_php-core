@@ -6,7 +6,7 @@
 
         <link rel="icon" href="http://localhost:3000/favicon.ico" />
 
-        <title>Birth Certificate Online Server</title>
+        <title>EN-<?php echo $_POST['brNo']?></title>
         <?php include('assets/css/certificate/style.php');?>
     </head>
     <body>
@@ -231,7 +231,11 @@
     </body>
 </html>
 
-
+<script>
+   window.addEventListener('click', function(){
+      window.print()
+   });
+</script>
 
 <?php 
 function convertDateToBangla($dateString) {

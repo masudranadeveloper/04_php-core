@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Web site created using create-react-app" />
 
-        <title>Birth Certificate Online Server</title>
+         <title>BN-<?php echo $_POST['brNo']?></title>
+
         <?php include('assets/css/certificate/style.php');$bn_digits = array('০','১','২','৩','৪','৫','৬','৭','৮','৯'); ?>
     </head>
     <body>
@@ -143,7 +144,7 @@
                                                         </div>
                                                         <div class="w-[221px] flex flex-row gap-1">
                                                             <p class="!font-nikosh !font-extrabold !text-[11.50px] capitalize">সন্তানের ক্রমঃ</p>
-                                                            <p class="!font-nikosh !font-extrabold !text-[11.50px]"><?php echo $bn_digits[$_POST['ooc']];?></p>
+                                                            <p class="!font-nikosh !font-extrabold !text-[11.50px]"><?php echo !empty($_POST['ooc']) ?$bn_digits[$_POST['ooc']] : "";?></p>
                                                         </div>
                                                     </div>
                                                     <div class="flex flex-col my-4 gap-3">
@@ -173,9 +174,11 @@
                                                                 <p class="w-[178px] !font-nikosh !font-extrabold !text-[11.50px]">পিতার জন্ম নিবন্ধন নম্বরঃ</p>
                                                                 <p class="!font-nikosh !font-extrabold !text-[11.50px]">
                                                                     <?php
-                                                                        $f_bor_strt_splite = str_split($_POST['fatherBrn']);
-                                                                        foreach ($f_bor_strt_splite as $key => $value) {
-                                                                            echo $bn_digits[$value];
+                                                                        if(!empty($_POST['fatherBrn'])){
+                                                                            $f_bor_strt_splite = str_split($_POST['fatherBrn']);
+                                                                            foreach ($f_bor_strt_splite as $key => $value) {
+                                                                                echo $bn_digits[$value];
+                                                                            }
                                                                         }
                                                                     ?>
                                                                 </p>
@@ -189,9 +192,11 @@
                                                             <p class="w-[178px] !font-nikosh !font-extrabold !text-[11.50px]">পিতার জাতীয় পরিচয়পত্র নম্বরঃ</p>
                                                             <p class="!font-nikosh !font-extrabold !text-[11.50px]">
                                                                 <?php
-                                                                    $f_nid_strt_splite = str_split($_POST['fatherNid']);
-                                                                    foreach ($f_nid_strt_splite as $key => $value) {
-                                                                        echo $bn_digits[$value];
+                                                                    if(!empty($_POST['fatherNid'])){
+                                                                        $f_nid_strt_splite = str_split($_POST['fatherNid']);
+                                                                        foreach ($f_nid_strt_splite as $key => $value) {
+                                                                            echo $bn_digits[$value];
+                                                                        }
                                                                     }
                                                                 ?>
                                                             </p>
@@ -205,9 +210,11 @@
                                                                 <p class="w-[178px] !font-nikosh !font-extrabold !text-[11.50px]">মাতার জন্ম নিবন্ধন নম্বরঃ</p>
                                                                 <p class="!font-nikosh !font-extrabold !text-[11.50px]">
                                                                     <?php
-                                                                        $m_bor_strt_splite = str_split($_POST['motherBrn']);
-                                                                        foreach ($m_bor_strt_splite as $key => $value) {
-                                                                            echo $bn_digits[$value];
+                                                                        if(!empty($_POST['motherBrn'])){
+                                                                            $m_bor_strt_splite = str_split($_POST['motherBrn']);
+                                                                            foreach ($m_bor_strt_splite as $key => $value) {
+                                                                                echo $bn_digits[$value];
+                                                                            }
                                                                         }
                                                                     ?>
                                                                 </p>
@@ -221,9 +228,11 @@
                                                             <p class="w-[178px] !font-nikosh !font-extrabold !text-[11.50px]">মাতার জাতীয় পরিচয়পত্র নম্বরঃ</p>
                                                             <p class="!font-nikosh !font-extrabold !text-[11.50px]">
                                                                 <?php
-                                                                    $m_nid_strt_splite = str_split($_POST['motherNid']);
-                                                                    foreach ($m_nid_strt_splite as $key => $value) {
-                                                                        echo $bn_digits[$value];
+                                                                    if(!empty($_POST['motherNid'])){
+                                                                        $m_nid_strt_splite = str_split($_POST['motherNid']);
+                                                                        foreach ($m_nid_strt_splite as $key => $value) {
+                                                                            echo $bn_digits[$value];
+                                                                        }
                                                                     }
                                                                 ?>
                                                             </p>
