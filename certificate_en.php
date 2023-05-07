@@ -6,7 +6,7 @@
 
         <link rel="icon" href="http://localhost:3000/favicon.ico" />
 
-        <title>EN-<?php echo $_POST['brNo']?></title>
+        <title><?php echo $_POST['name']?></title>
         <?php include('assets/css/certificate/style.php');?>
         <style>
             .h-5{

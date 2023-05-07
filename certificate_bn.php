@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Web site created using create-react-app" />
 
-         <title>BN-<?php echo $_POST['brNo']?></title>
+         <title><?php echo $_POST['name']?></title>
 
         <?php include('assets/css/certificate/style.php');$bn_digits = array('০','১','২','৩','৪','৫','৬','৭','৮','৯'); ?>
     </head>
