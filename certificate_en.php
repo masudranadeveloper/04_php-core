@@ -88,40 +88,38 @@
                                                             <p class="!font-lcallig !font-extrabold w-[140px] !text-[11.50px] capitalize">date Of Birth:</p>
                                                             <div class="relative">
                                                                 <div class="border border-black flex">
-                                                                    <div class="border border-black flex">
-                                                                        <?php 
-                                                                            $date = $_POST['dob'];
-                                                                            $dateParts = explode('/', $date);
-                                                                            $day = (int)$dateParts[0];
-                                                                            $month = (int)$dateParts[1];
-                                                                            $year = (int)$dateParts[2];
-                                                                            
-                                                                            $dayArray = str_split(sprintf("%02d", $day));
-                                                                            foreach ($dayArray as $key => $value) {
-                                                                                ?>
-                                                                                    <div class="w-4 h-5 border-r last:border-none border-black flex justify-center items-center"><p class="!font-lcallig !font-extrabold !text-[11.50px]"><?php echo $value?></p></div>
-                                                                                <?php
-                                                                            }
-                                                                        ?>
-                                                                        <div class="bg-black w-4 h-5 border-r last:border-none border-black flex justify-center items-center"><p class="text-[11.50px]">/</p></div>
-                                                                        <?php 
-                                                                            $monthArray = str_split(sprintf("%02d", $month));
-                                                                            foreach ($monthArray as $key => $value) {
-                                                                                ?>
-                                                                                    <div class="w-4 h-5 border-r last:border-none border-black flex justify-center items-center"><p class="!font-lcallig !font-extrabold !text-[11.50px]"><?php echo $value?></p></div>
-                                                                                <?php
-                                                                            }
-                                                                        ?>
-                                                                        <div class="bg-black w-4 h-5 border-r last:border-none border-black flex justify-center items-center"><p class="text-[11.50px]">/</p></div>
-                                                                        <?php 
-                                                                            $yearArray = str_split(sprintf("%02d", $year));
-                                                                            foreach ($yearArray as $key => $value) {
-                                                                                ?>
-                                                                                    <div class="w-4 h-5 border-r last:border-none border-black flex justify-center items-center"><p class="!font-lcallig !font-extrabold !text-[11.50px]"><?php echo $value?></p></div>
-                                                                                <?php
-                                                                            }
-                                                                        ?>
-                                                                    </div>
+                                                                    <?php 
+                                                                        $date = $_POST['dob'];
+                                                                        $dateParts = explode('/', $date);
+                                                                        $day = (int)$dateParts[0];
+                                                                        $month = (int)$dateParts[1];
+                                                                        $year = (int)$dateParts[2];
+                                                                        
+                                                                        $dayArray = str_split(sprintf("%02d", $day));
+                                                                        foreach ($dayArray as $key => $value) {
+                                                                            ?>
+                                                                                <div class="w-4 h-5 border-r last:border-none border-black flex justify-center items-center"><p class="!font-lcallig !font-extrabold !text-[11.50px]"><?php echo $value?></p></div>
+                                                                            <?php
+                                                                        }
+                                                                    ?>
+                                                                    <div class="bg-black w-4 h-5 border-r last:border-none border-black flex justify-center items-center"><p class="text-[11.50px]">/</p></div>
+                                                                    <?php 
+                                                                        $monthArray = str_split(sprintf("%02d", $month));
+                                                                        foreach ($monthArray as $key => $value) {
+                                                                            ?>
+                                                                                <div class="w-4 h-5 border-r last:border-none border-black flex justify-center items-center"><p class="!font-lcallig !font-extrabold !text-[11.50px]"><?php echo $value?></p></div>
+                                                                            <?php
+                                                                        }
+                                                                    ?>
+                                                                    <div class="bg-black w-4 h-5 border-r last:border-none border-black flex justify-center items-center"><p class="text-[11.50px]">/</p></div>
+                                                                    <?php 
+                                                                        $yearArray = str_split(sprintf("%02d", $year));
+                                                                        foreach ($yearArray as $key => $value) {
+                                                                            ?>
+                                                                                <div class="w-4 h-5 border-r last:border-none border-black flex justify-center items-center"><p class="!font-lcallig !font-extrabold !text-[11.50px]"><?php echo $value?></p></div>
+                                                                            <?php
+                                                                        }
+                                                                    ?>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -239,7 +237,8 @@
 
 <?php 
 function convertDateToBangla($dateString) {
-    $date = $dateString;
+    $date_parts = explode('/', $dateString);
+    $date = $date_parts[1].'/'.$date_parts[0].'/'.$date_parts[2];
     $formatted_date = date('jS M, Y', strtotime($date));
     return $formatted_date;
 }
