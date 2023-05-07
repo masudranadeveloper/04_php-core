@@ -8,6 +8,11 @@
 
         <title>EN-<?php echo $_POST['brNo']?></title>
         <?php include('assets/css/certificate/style.php');?>
+        <style>
+            .h-5{
+                height: 1.75rem !important;
+            }
+        </style>
     </head>
     <body>
         <div id="root">
@@ -72,7 +77,7 @@
 
                                                                     foreach ($str_splite as $key => $value) {
                                                                         ?>
-                                                                            <div class="w-[28.30px] h-[35px] border-r last:border-none border-black flex justify-center items-center"><p class="!font-nikosh !font-extrabold !text-[11.50px]"><?php echo $value; ?></p></div>
+                                                                            <div class="w-[28.30px] h-[35px] border-r last:border-none border-black flex justify-center items-center"><p style="font-family:LCALLIG !important;" class="!font-extrabold !text-[11.50px]"><?php echo $value; ?></p></div>
                                                                         <?php
                                                                     }
                                                                 ?>
